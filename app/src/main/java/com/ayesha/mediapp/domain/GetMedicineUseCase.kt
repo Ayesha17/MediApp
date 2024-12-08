@@ -12,7 +12,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 class GetMedicineUseCase(
     private val medicationRepository: MedicationRepository,
     ioDispatcher: CoroutineDispatcher
-) :
+) : 
     BaseUseCase<Unit, RemoteMedication>(ioDispatcher) {
     override suspend fun execute(params: Unit): CloudResult<Failure, RemoteMedication> =
         medicationRepository.getMedication()
