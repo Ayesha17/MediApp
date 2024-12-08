@@ -14,7 +14,6 @@ composeBom = "2023.08.00"
 lottieCompose = "4.0.0"
 mockitoAndroid = "2.24.5"
 mockitoCore = "2.24.5"
-mockitoKotlin = "2.8.47"
 room = "2.6.1"
 hilt = "2.52"
 retrofit = "2.11.0"
@@ -54,7 +53,6 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroid" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoAndroid" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
-mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }

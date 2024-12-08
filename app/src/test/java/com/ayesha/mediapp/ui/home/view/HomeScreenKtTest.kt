@@ -9,33 +9,41 @@ import org.mockito.Mockito
 class HomeScreenKtTest {
     @Test
     fun `returns good morning for hours between 0 and 11`() {
-        mockCurrentHour(9) // Mock 9 AM
-        assertEquals(R.string.good_morning, getGreeting())
+        val mockedCalendar = Mockito.mock(Calendar::class.java)
+        Mockito.`when`(mockedCalendar.get(Calendar.HOUR_OF_DAY)).thenReturn(9)
+
+        val greeting = getGreeting(mockedCalendar)
+
+        assertEquals(R.string.good_morning, greeting)
     }
 
     @Test
     fun `returns good afternoon for hours between 12 and 17`() {
-        mockCurrentHour(15) // Mock 3 PM
-        assertEquals( R.string.good_afternoon, getGreeting())
+        val mockedCalendar = Mockito.mock(Calendar::class.java)
+        Mockito.`when`(mockedCalendar.get(Calendar.HOUR_OF_DAY)).thenReturn(15)// Mock 3 PM
+
+        val greeting = getGreeting(mockedCalendar)
+
+        assertEquals( R.string.good_afternoon,greeting)
     }
 
     @Test
     fun `returns good evening for hours between 18 and 23`() {
-        mockCurrentHour(20) // Mock 8 PM
-        assertEquals(R.string.good_evening, getGreeting())
+        val mockedCalendar = Mockito.mock(Calendar::class.java)
+        Mockito.`when`(mockedCalendar.get(Calendar.HOUR_OF_DAY)).thenReturn(20) // Mock 8 PM
+
+        val greeting = getGreeting(mockedCalendar)
+        assertEquals(R.string.good_evening, greeting)
     }
 
     @Test
     fun `returns hello for invalid hours`() {
-        mockCurrentHour(25) // Mock invalid hour
-        assertEquals(R.string.hello, getGreeting())
+        val mockedCalendar = Mockito.mock(Calendar::class.java)
+        Mockito.`when`(mockedCalendar.get(Calendar.HOUR_OF_DAY)).thenReturn(25) // Mock invalid hour
+
+        val greeting = getGreeting(mockedCalendar)
+        assertEquals(R.string.hello, greeting)
     }
 
-    private fun mockCurrentHour(hour: Int) {
-        val mockedCalendar = Mockito.mock(Calendar::class.java)
-        Mockito.`when`(mockedCalendar.get(Calendar.HOUR_OF_DAY)).thenReturn(hour)
-        Mockito.mockStatic(Calendar::class.java).use { mockedStatic ->
-            mockedStatic.`when`<Calendar> { Calendar.getInstance() }.thenReturn(mockedCalendar)
-        }
-    }
+
 }

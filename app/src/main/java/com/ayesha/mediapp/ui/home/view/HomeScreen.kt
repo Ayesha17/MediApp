@@ -103,7 +103,7 @@ fun HomeScreen() {
 private fun GreetingSection(userName: String) {
     Row(modifier = Modifier.padding(horizontal = 16.dp)) {
         Text(
-            text = stringResource(getGreeting()),
+            text = stringResource(getGreeting( Calendar.getInstance())),
             color = Color.Black,
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold
@@ -278,8 +278,8 @@ private fun DrugDetail(it: Drug, modifier: Modifier = Modifier) {
 }
 
 
-fun getGreeting(): Int {
-    val currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+fun getGreeting(calendar: Calendar): Int {
+    val currentHour =calendar.get(Calendar.HOUR_OF_DAY)
     return when (currentHour) {
         in 0..11 -> R.string.good_morning
         in 12..17 -> R.string.good_afternoon
