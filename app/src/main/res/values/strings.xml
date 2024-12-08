@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MediApp</string>
+    <string name="welcome_to_medi_app">Welcome to Medi App</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="empty"></string>
+    <string name="please_fill_the_required_fields">Please fill the required fields</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="good_afternoon">Good Afternoon</string>
+    <string name="good_evening">Good Evening</string>
+    <string name="hello">Hello</string>
+    <string name="class_num">Class %1$s</string>
+    <string name="associated_drug">Associated Drug %1$s</string>
+    <string name="dose_strength">Dose : %1$s , Strength : %2$s</string>
+    <string name="problem">For Problem : %1$s </string>
+    <string name="something_went_wrong">Something went wrong.</string>
+</resources>
